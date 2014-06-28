@@ -29,7 +29,7 @@ block content
     header.page-header
       h1.page-title Pretty Open Type
       .tagline 
-        | A sweet collection of free beautiful fonts
+        | A sweet collection of beautiful free fonts.
       .subtitle 
         em By Namanyay Goel
 
@@ -46,15 +46,15 @@ block content
             - use = "<link href='http://fonts.googleapis.com/css?family=" + name.replace(' ', '+') + "' rel='stylesheet' type='text/css'>"
           - }
 
-          section.font-block
+          section.font-block(data-name="#{name}", data-from="#{font.from}", data-type="#{font.type}", class="font-block font-#{font.type}")
             .preview(style="font-family: #{name}") The five boxing wizards jump quickly 123456789
             .text 
               header
                 h1.title= name
 
               footer
-                .tags
-                  div= font.type.join(', ')
+                .type
+                  div= font.type
                 .urls
                   .url.use
                     strong Use: 
