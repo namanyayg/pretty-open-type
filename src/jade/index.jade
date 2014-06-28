@@ -31,7 +31,12 @@ block content
       .tagline 
         | A sweet collection of beautiful free fonts.
       .subtitle 
-        em By Namanyay Goel
+        div 
+          em By <a href="http://namanyayg.com/" rel="designer">Namanyay Goel</a>
+        nav.small-nav 
+          a(href="https://github.com/namanyayg/pretty-open-type/") View on Github
+          a(href="https://github.com/namanyayg/pretty-open-type/blob/master/CONTRIBUTE.md") Contribute fonts
+
 
     .fonts.js-isotope.stack.stack-clean
       - for ( num in fonts ) { 

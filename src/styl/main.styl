@@ -239,6 +239,20 @@ input[type='button']:active, input[type='submit']:active, button:active, .button
   margin: .3em 0 .6em;
 }
 
+.small-nav {
+  margin: 1em 0 0;
+  
+  a + a {
+    &:before {
+      border-left: 2px solid #ccc;
+      height: 1em;
+      width: 0;
+      content: '';
+      margin: 0 .5em;
+    }
+  }
+}
+
 
 /* ==========================================================================
    =FONT
