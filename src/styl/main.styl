@@ -13,83 +13,40 @@ Namanyay Goel | www.namanyayg.com | @namanyayg */
    =CORE
    ========================================================================== */
 
+$color-bg = #F7F9FB;
+$color-highlight = #E9615C;
+
+$light-text-color = darken($color-bg, 50%);
+$text-color = darken($color-bg, 60%);
+$dark-text-color = darken($text-color, 15%);
+
 body {
   margin: 0; padding: 0;
+  background: $color-bg;
 }
 
 /* Remember to use normalize or a reset! */
 
 body, input, textarea, button, form, select {
-  font: 100%/1.5 'Open Sans', sans-serif;
-    color: #444;
+  font: 100%/1.5 'Lato', sans-serif;
+    color: $text-color
   /* Inputs, forms, etc, can have weird font styles */
 }
 
 a, a:link, a:visited { 
   text-decoration: none;
-
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  -o-transition: all .3s ease;
   transition: all .3s ease;
+  color: $color-highlight;
 }
 
 a:hover, a:active, a:focus {
-
+  color darken($color-highlight, 50%)
 }
 
-
-
-
-
-/* ==========================================================================
-   =TYPOGRAPHY
-   ========================================================================== */
-
-p { margin: 0; }
-p + p { margin-top: 1.5em; }
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-    /* Set defaults for all headings here, 
-    you might want to change fonts or sizes */
-    font-weight: 100;
-    color: #222;
+::selection {
+  background: $color-highlight
+  color white
 }
-
-h1 {
-    font-size: 2em;
-    line-height: 1.5;
-    margin: .375em 0;
-}
-
-h2 {
-    font-size: 1.5em;
-    line-height: 1;
-    margin: .5em 0;
-}
-
-h3 {
-    font-size: 1.25em;
-    line-height: 1.2;
-    margin: .6em 0;
-}
-
-h4 {
-    font-size: 1.125em;
-    line-height: 1.333333;
-    margin: .666666em 0;
-}
-
-h5, h6 { 
-    font-size: 1em;
-    line-height: 1.5;
-    margin: .75em 0;
-    text-transform: uppercase;
-}
-
-
 
 
 
@@ -253,18 +210,45 @@ input[type='button']:active, input[type='submit']:active, button:active, .button
 
    ========================================================================== */
 
+
 .wrap {
   padding: 0 3em;
 }
+
+
+/* ==========================================================================
+   =HEADER
+   ========================================================================== */
+
+.page-header {
+  text-align: center;
+  margin: 2em 0 4em;
+}
+
+.page-title {
+  color $dark-text-color
+  font-size: 3em;
+  font-weight: 900;
+  text-shadow 2px 1px white, 4px 3px darken($color-bg, 10%)
+  margin: 0;
+}
+
+.tagline {
+  font-size: 1.25em;
+  font-weight: 300;
+  margin: .3em 0 .5em;
+}
+
 
 /* ==========================================================================
    =FONT
    ========================================================================== */
 
+
 .font-block {
   border-radius: .2em;
   background: white;
-  border: thin solid #eee;
+  // border: thin solid #eee;
   border-bottom-width: 2px;
 }
 
@@ -272,10 +256,11 @@ input[type='button']:active, input[type='submit']:active, button:active, .button
   font-size: 2em;
   text-align: center;
   padding: .75em;
+  color: $dark-text-color
 }
 
 .text {
-  background: #f9f9f9;
+  background: darken($color-bg, 5%);
   padding: 1em;
 }
 
@@ -285,10 +270,14 @@ input[type='button']:active, input[type='submit']:active, button:active, .button
   margin: 0 0 1em;
 }
 
+footer {
+  color $light-text-color
+}
+
 .tags {
-  font-size: .825em;
   font-style: italic;
-  margin: 0 0 .5em;
+  margin: -.75em 0 .75em;
+  color $light-text-color
   text-transform: capitalize;
 }
 

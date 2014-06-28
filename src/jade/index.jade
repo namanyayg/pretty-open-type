@@ -7,7 +7,7 @@ block title
 
 block content 
   
-  // LOADING GOOGLE FONTS
+  //- LOADING GOOGLE FONTS
   - var googleFonts = [];
 
   - for ( num in fonts ) { 
@@ -22,17 +22,24 @@ block content
   - var googleFontsList = googleFonts.join('|');
   
   link(href='http://fonts.googleapis.com/css?family=#{googleFontsList}', rel='stylesheet', type='text/css')
-  // Fin loading
+  //- Fin loading
 
   .wrap
 
-    .stack.stack-clean
+    header.page-header
+      h1.page-title Pretty Open Type
+      .tagline 
+        | A sweet collection of free beautiful fonts
+      .subtitle 
+        em By Namanyay Goel
+
+    .fonts.js-isotope.stack.stack-clean
       - for ( num in fonts ) { 
         - font = fonts[num]
         - name = font.name
-        // Init fonts and name
+        //- Init fonts and name
       
-        .sympl.quarter.m-half
+        .sympl.half
 
           - if ( font.from == 'google' ) {
             - url = "google.com/fonts/specimen/" + name.replace(' ', '+')
@@ -51,10 +58,10 @@ block content
                 .urls
                   .url.use
                     strong Use: 
-                    | #{use}
+                    span= use
                   .url.page
                     strong View: 
-                    | #{url}
+                    a(href="#{url}")= url
       
       - }
     

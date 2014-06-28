@@ -1,11 +1,6 @@
 {
   "fonts": [
     {
-      "name": "Geo",
-      "from": "google",
-      "type": ["display", "sans-serif"]
-    },
-    {
       "name": "Open Sans",
       "from": "google",
       "type": ["sans-serif"]
@@ -26,9 +21,19 @@
       "type": ["sans-serif"]
     },
     {
+      "name": "Ek Mukta",
+      "from": "google",
+      "type": ["sans-serif"]
+    },
+    {
       "name": "Maven Pro",
       "from": "google",
       "type": ["sans-serif"]
+    },
+    {
+      "name": "Source Code Pro",
+      "from": "google",
+      "type": ["monospace"]
     },
     {
       "name": "Montserrat",
