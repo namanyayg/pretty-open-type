@@ -4,6 +4,7 @@ $(window).on('load', function() {
     itemSelector: '.sympl',
     columnWidth: '25%',
     sortBy: 'random',
+    gutter: '0'
   });
 
   $cont.isotope('shuffle');
