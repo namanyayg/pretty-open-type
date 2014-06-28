@@ -3,8 +3,58 @@ extends templates/_layout
 block vars
 
 block title
-  title Project Name
+  title Pretty Open Type
 
 block content 
-  main
-    p Hello World!
+  
+  // LOADING GOOGLE FONTS
+  - var googleFonts = [];
+
+  - for ( num in fonts ) { 
+    - font = fonts[num]
+    - name = font.name
+
+    - if ( font.from == 'google' ) {
+      - googleFonts.push( name.replace(' ', '+') )
+    - }
+  - }
+  
+  - var googleFontsList = googleFonts.join('|');
+  
+  link(href='http://fonts.googleapis.com/css?family=#{googleFontsList}', rel='stylesheet', type='text/css')
+  // Fin loading
+
+  .wrap
+
+    .stack.stack-clean
+      - for ( num in fonts ) { 
+        - font = fonts[num]
+        - name = font.name
+        // Init fonts and name
+      
+        .sympl.quarter.m-half
+
+          - if ( font.from == 'google' ) {
+            - url = "google.com/fonts/specimen/" + name.replace(' ', '+')
+            - use = "<link href='http://fonts.googleapis.com/css?family=" + name.replace(' ', '+') + "' rel='stylesheet' type='text/css'>"
+          - }
+
+          section.font-block
+            .preview(style="font-family: #{name}") The five boxing wizards jump quickly 123456789
+            .text 
+              header
+                h1.title= name
+
+              footer
+                .tags
+                  div= font.type.join(', ')
+                .urls
+                  .url.use
+                    strong Use: 
+                    | #{use}
+                  .url.page
+                    strong View: 
+                    | #{url}
+      
+      - }
+    
