@@ -1,17 +1,19 @@
 # Contribute
 
-Currently, the Pretty Open Type only supports Google Fonts. More coming soon!
+Currently, Pretty Open Type only supports Google Fonts. More coming soon!
 
-The site is generated through gulp. Clone the repo and install the following modules: 
+The site is generated through gulp. Fork and clone the repo and install the following modules: 
 
 ```
 npm install gulp-stylus gulp-autoprefixer gulp-jade gulp-embedlr gulp-uglify gulp-concat gulp-include gulp-clean gulp-connect gulp-if gulp-cssshrink
 ```
 
-Add your font, type, and from into `data.js` in the `src` folder. (Current supported `from` is `google`, *i.e.*, Google Web Fonts).
+Add the `"name"`, `"type"`, and `"from"` into `data.js` in `src`. (Currently, `"form"` only supports the value `"google"`
 
-Run `gulp` in the command line, done!
+Run `gulp` in the command line, push and make a pull request. Done!
 
 ---
 
-If you're looking for a simple way to contribute, simply open a New Issue or create a pull request by editing the `data.js` file.
+## Something simpler..?
+
+Open a [new issue](https://github.com/namanyayg/pretty-open-type/issues/new) with the font's name and (preferably) links, or create a pull request after adding font information into the `data.js` file.
